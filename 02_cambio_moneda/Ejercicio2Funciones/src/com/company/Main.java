@@ -24,6 +24,9 @@ public class Main {
             case "jpy":
                 cambio = euros * 132.54;
                 break;
+            default:
+                System.out.println("ERROR: Moneda incorrecta... ");
+                break;
         }
 
         return cambio;
@@ -60,6 +63,9 @@ public class Main {
                 break;
             case "jpy":
                 System.out.println("--- " + a + " euros son " + calcularCambio(a, b, c) + " jpy ---");
+                break;
+            default:
+                System.out.println("ERROR: Moneda incorrecta... ");
                 break;
 
         }
