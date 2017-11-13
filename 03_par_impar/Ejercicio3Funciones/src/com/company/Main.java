@@ -13,6 +13,7 @@ public class Main {
         else
             return false;
     }
+    //return numero % 2 == 0;
 
     public static boolean esImpar(int numero) {
 
@@ -21,6 +22,9 @@ public class Main {
         else
             return false;
     }
+    /*  return numero % 2 != 0;
+        return !esPar(n);*/
+
 
     public static void main(String[] args) throws IOException {
         // Escribe las funciones esPar() y esImpar() que nos digan si un número es par o impar respectivamente.

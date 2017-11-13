@@ -7,8 +7,9 @@ import java.io.InputStreamReader;
 public class Main {
 
 
-    public static double calcularCambio(double euros, double cambio, String divisa) {
+    public static double calcularCambio(double euros, String divisa) {
 
+        double cambio = 0;
 
         switch (divisa) {
 
@@ -45,24 +46,22 @@ public class Main {
         System.out.println("Introduce la cantidad de euros: ");
         double a = Double.parseDouble(br.readLine());
 
-        double b = 0;
-
         System.out.println("Introduce divisa a la que deseas convertir: USD, GBP, CNY, JPY ");
-        String c = br.readLine().toLowerCase();
+        String b = br.readLine().toLowerCase();
 
-        switch (c) {
+        switch (b) {
 
             case "usd":
-                System.out.println("--- " + a + " euros son " + calcularCambio(a, b, c) + " usd ---");
+                System.out.println("--- " + a + " euros son " + calcularCambio(a, b) + " usd ---");
                 break;
             case "gbp":
-                System.out.println("--- " + a + " euros son " + calcularCambio(a, b, c) + " gbp ---");
+                System.out.println("--- " + a + " euros son " + calcularCambio(a, b) + " gbp ---");
                 break;
             case "cny":
-                System.out.println("--- " + a + " euros son " + calcularCambio(a, b, c) + " cny ---");
+                System.out.println("--- " + a + " euros son " + calcularCambio(a, b) + " cny ---");
                 break;
             case "jpy":
-                System.out.println("--- " + a + " euros son " + calcularCambio(a, b, c) + " jpy ---");
+                System.out.println("--- " + a + " euros son " + calcularCambio(a, b) + " jpy ---");
                 break;
             default:
                 System.out.println("ERROR: Moneda incorrecta... ");
