@@ -29,39 +29,33 @@ import java.io.InputStreamReader;
 public class Main {
 
 
-    private static double longitud(double l) {
-
-        double π = 3.14159265359;
+    private static double longitud(double l, double π) {
         double perimetro = 2 * π * l;
-
         return perimetro;
+        /*Math.PI/para poner el pi. Math.pow(r, 2)/Para elevar un numero, ejemplo: r elevado a 2.
+          Poner directamente un resultado en el return cuando sea un unico calculo para ahorrar codigo.*/
     }
 
-    private static double area(double a) {
-
-        double π = 3.14159265359;
+    private static double area(double a, double π) {
         double area = π * (a * a);
-
         return area;
     }
 
-    private static double volumen(double v) {
-
-        double π = 3.14159265359;
+    private static double volumen(double v, double π) {
         double volumen = (4 / 3) * π * (v * v * v);
-
         return volumen;
     }
 
     public static void main(String[] args) throws IOException {
 
-
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         char option;
+        double a = 0;
+        double b = 3.14159265359;
 
         do {
-            System.out.println("=== Calculadora ===\n" +
+            System.out.println("\n=== Calculadora ===\n" +
                     "a) Longitud de la circunferencia\n" +
                     "b) Área del círculo\n" +
                     "c) Volumen de la esfera\n" +
@@ -70,31 +64,28 @@ public class Main {
 
             option = br.readLine().toLowerCase().charAt(0);
 
+            if (option == 'a' || option == 'b' || option == 'c') {
+                System.out.println("Introduce el radio: ");
+                a = Double.parseDouble(br.readLine());
+            }
             switch (option) {
                 case 'a':
-                    System.out.println("Introduce el radio: ");
-                    double a = Double.parseDouble(br.readLine());
-                    System.out.println("La longitud es: " + longitud(a));
+                    System.out.println("La longitud es: " + longitud(a, b));
                     break;
+                    /* %.3f, imprime el numero pedido en los decimales deseados. Ejemplo:
+                      System.out.println("La longitud es: %.3f \n", longitud(a, b)); */
                 case 'b':
-                    System.out.println("Introduce el radio: ");
-                    double b = Double.parseDouble(br.readLine());
-                    System.out.println("El area es: " + area(b));
+                    System.out.println("El area es: " + area(a, b));
                     break;
                 case 'c':
-                    System.out.println("Introduce el radio: ");
-                    double c = Double.parseDouble(br.readLine());
-                    System.out.println("El volumen es: " + volumen(c));
+                    System.out.println("El volumen es: " + volumen(a, b));
                     break;
-
                 case 'd':
                     System.out.println("Fin del programa");
                     break;
-
                 default:
                     System.out.println("ERROR");
                     break;
-
             }
         } while (option != 'd');
     }
