@@ -17,16 +17,15 @@ public class Main {
 
     public static int factorialrecursivo(int numero) {
 
-        if (numero == 0)
-            return 1;
-        else
+        if (numero > 0)
             return numero * factorialrecursivo(numero - 1);
+        else
+            return 1;
     }
 
     public static void main(String[] args) throws IOException {
         /* Escribe una función que calcule el factorial de un número.
-
-        Nota: Haz una versión repetitiva y otra recursiva*/
+         Nota: Haz una versión repetitiva y otra recursiva*/
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
